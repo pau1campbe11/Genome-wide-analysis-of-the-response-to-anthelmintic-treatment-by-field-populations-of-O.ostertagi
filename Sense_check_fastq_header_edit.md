@@ -1,4 +1,4 @@
-# Sense check that fastq header edit hasn't changed or removed sequences
+# Sense check that fastq header edit hasn't changed or removed the number of sequences
 
 ## Check line count for original fastq 
 
