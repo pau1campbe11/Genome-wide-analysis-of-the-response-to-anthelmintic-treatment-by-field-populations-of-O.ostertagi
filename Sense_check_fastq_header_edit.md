@@ -210,6 +210,7 @@ Output: fastq_header_post_edit_stats.txt
         farm_3_pretx_R2_001.fastq_renamed.fastq.gz:
         4418444788
 
+Okay, good, the number of lines in each file hasn't changed. 
 
 
 
