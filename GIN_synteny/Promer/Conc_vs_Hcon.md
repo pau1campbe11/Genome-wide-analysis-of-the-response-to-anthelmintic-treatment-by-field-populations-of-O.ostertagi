@@ -24,17 +24,20 @@ The goal is to generate a filtered and human-readable alignment coordinate file 
 
 	show-coords \
   		-lTH \
-  		-L 1000 \
+  		-L 500 \
   		oster_vs_hcon.delta > oster_vs_hcon.coords
 
-### Parameter description 
+### Parameter description: 
 
 | **Parameter** | **Function**  |
 |---------------|---------------|
 | -l 			|Include alignment length|
 |-T				|Produce tab-delimited output|
+|-H				|Suppress header lines |
+-L 1000			|Filter alignments shorter than 500 aa|
 
-
+### Output files:
+	•	oster_vs_hcon.coords
 
 
 
