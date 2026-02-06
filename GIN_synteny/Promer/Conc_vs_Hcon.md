@@ -58,14 +58,11 @@ This step converts filtered MUMmer alignment coordinates into Circos-compatible 
    		--promer \
     	--min_hit_len=1000 \
     	--min_chr_len=20000 \
-		--ref_order=relw  \
     	--ribbons \
     	--prefix oster_vs_hcon \
     	--debug \
    		--coord-file oster_vs_hcon.coords \
     	--flipquery \
-    	--no_ref_labels \
-    	--no_query_labels \
     	--colour_links_by_query
 
 ### Parameter description: 
@@ -74,13 +71,35 @@ This step converts filtered MUMmer alignment coordinates into Circos-compatible 
 |---------------|---------------|
 |--promer |Specifies that input coordinates originate from PROmer |
 |--min_chr_len=20000 | Excludes scaffolds shorter than 20kb |
-|--ref_order=relw | Orders reference chromsomes based on relative alignment length |
 |--ribbons | Produce ribbon-style synteny links |
 |--prefix | Defines naming prefix |
 |--debug | Produces verbose output for troubleshooting |
 |--coord-file | Specifies filtered input file |
 |--flipquery | Reverses orientation of query genome relative to reference |
-|--no_ref_labels | 
-|--no_query_labels |
 |--colour_links_by_query | Colours ribbons based on query chromosome identity |
-|
+
+### Output files:
+
+	•	karyotype file
+	•	link data file 
+	•	circos configuration file 
+
+## Generate circos plot 
+
+This step generates a Circos visualisation using pre-prepared configuration and data files. The Circos software produces circular genome plots used to visualise structural relationships such as synteny and chromosomal rearrangements.
+
+### Command: Run circos 
+
+	circos -conf circos.conf
+
+### Output files:
+
+	•	PNG image of synteny plot
+	•	SVG file
+	•	Log files for troubleshooting
+
+![Genome synteny between *O. ostertagi* and *H. contortus*.](figures/oster_vs_hconcircos.png)
+
+
+
+
