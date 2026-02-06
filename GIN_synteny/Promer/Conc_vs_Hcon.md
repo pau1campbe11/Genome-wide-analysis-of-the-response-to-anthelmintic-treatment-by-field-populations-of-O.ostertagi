@@ -98,7 +98,7 @@ This step generates a Circos visualisation using pre-prepared configuration and 
 	•	SVG file
 	•	Log files for troubleshooting
 
-![Genome synteny between *O. ostertagi* and *H. contortus*.](GIN_synteny/Promer/Figures/oster_vs_hconcircos-3.png)
+![Genome synteny between *O. ostertagi* and *H. contortus*.](Figures/oster_vs_hconcircos-3.png)
 
 
 
