@@ -10,6 +10,16 @@ This document describes the execution of **PROmer** (from the MUMmer package) to
     /users/pbc1s/project0005/paul/ref_genomes/soft-masked_genome/haemonchus_contortus.PRJEB506.WBPS19.genomic_softmasked.fa \
     /users/pbc1s/project0005/paul/ref_genomes/unmasked_genome/GCA_964213955.1_nxOstOste4.1_genomic.fna
 
+
+### Parameter description: 
+
+| **Parameter** | **Function**  |
+|---------------|---------------|
+|promer | Specify alignment package	|
+|--prefix | Defines naming prefix |
+|--mum | Use maximal unique matches |
+
+
 ### Output files:
 	•	oster_vs_hcon.delta – Alignment coordinates
 	•	oster_vs_hcon.mums 	– Match coordinates
