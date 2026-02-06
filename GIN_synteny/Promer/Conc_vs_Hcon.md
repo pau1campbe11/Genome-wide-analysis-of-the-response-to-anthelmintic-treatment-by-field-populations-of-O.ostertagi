@@ -27,6 +27,11 @@ The goal is to generate a filtered and human-readable alignment coordinate file 
   		-L 1000 \
   		oster_vs_hcon.delta > oster_vs_hcon.coords
 
+### Parameter description 
+
+| **Parameter** | **Function**  |
+|---------------|---------------|
+| -l 			|Include alignment length|
 
 
 
