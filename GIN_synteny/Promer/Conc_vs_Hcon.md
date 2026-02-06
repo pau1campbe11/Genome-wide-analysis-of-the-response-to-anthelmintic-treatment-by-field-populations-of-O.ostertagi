@@ -3,7 +3,7 @@
 This document describes the execution of **PROmer** (from the MUMmer package) to perform protein-level genome alignment between *Haemonchus contortus* and *Ostertagia ostertagi*, and visualise synteny using circos. PROmer aligns translated nucleotide sequences, improving sensitivity for divergent genomes.
 
 ## Genome alignment using PROmer and maximal unique matches 
-### Command
+### Command:
   
     promer \
     --prefix=oster_vs_hcon \
@@ -20,7 +20,7 @@ This document describes the execution of **PROmer** (from the MUMmer package) to
 The goal is to generate a filtered and human-readable alignment coordinate file for downstream comparative genomics analyses.
 
 ## Generate alignment coordinates
-### Command
+### Command:
 
 	show-coords \
   		-lTH \
@@ -39,6 +39,9 @@ The goal is to generate a filtered and human-readable alignment coordinate file 
 ### Output files:
 	•	oster_vs_hcon.coords
 
+## Generating circos input files 
+
+The goal is to generate the input files required to create a circos ribbon plot, from the PROmer output. This uses the perl script *Nucmer.2.circos.pl* created by James Cotton. 
 
 
 
