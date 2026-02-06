@@ -32,6 +32,7 @@ The goal is to generate a filtered and human-readable alignment coordinate file 
 | **Parameter** | **Function**  |
 |---------------|---------------|
 | -l 			|Include alignment length|
+|-T				|Produce tab-delimited output|
 
 
 
