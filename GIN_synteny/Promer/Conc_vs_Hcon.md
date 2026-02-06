@@ -2,8 +2,7 @@
 
 This document describes the execution of **PROmer** (from the MUMmer package) to perform protein-level genome alignment between *Haemonchus contortus* and *Ostertagia ostertagi*, and visualise synteny using circos. PROmer aligns translated nucleotide sequences, improving sensitivity for divergent genomes.
 
-## Genome alignment using PROmer and maximal unique matches 
-### Command:
+### Command: Genome alignment using PROmer and maximal unique matches 
   
     promer \
     --prefix=oster_vs_hcon \
@@ -19,8 +18,7 @@ This document describes the execution of **PROmer** (from the MUMmer package) to
 
 The goal is to generate a filtered and human-readable alignment coordinate file for downstream comparative genomics analyses.
 
-## Generate alignment coordinates
-### Command:
+### Command: Generate alignment coordinates
 
 	show-coords \
   		-lTH \
@@ -39,10 +37,40 @@ The goal is to generate a filtered and human-readable alignment coordinate file 
 ### Output files:
 	•	oster_vs_hcon.coords
 
-## Generating circos input files 
+## Circos Input Generation from PROMmer Coordinates
 
-The goal is to generate the input files required to create a circos ribbon plot, from the PROmer output. This uses the perl script *Nucmer.2.circos.pl* created by James Cotton. 
+This step converts filtered MUMmer alignment coordinates into Circos-compatible configuration and link files. The script processes genome alignment data to generate ribbon-style synteny visualisations.
 
+### Command: Run NUCmer.2.circos.pl 
 
+	/usr/bin/perl \
+	//users/pbc1s/project0005/paul/chr_synteny/promer_synteny/nucmer.2.circos.pl \
+   		--promer \
+    	--min_hit_len=1000 \
+    	--min_chr_len=20000 \
+		--ref_order=relw  \
+    	--ribbons \
+    	--prefix oster_vs_hcon \
+    	--debug \
+   		--coord-file oster_vs_hcon.coords \
+    	--flipquery \
+    	--no_ref_labels \
+    	--no_query_labels \
+    	--colour_links_by_query
 
+### Parameter description: 
 
+| **Parameter** | **Function**  |
+|---------------|---------------|
+|--promer |Specifies that input coordinates originate from PROmer |
+|--min_chr_len=20000 | Excludes scaffolds shorter than 20kb |
+|--ref_order=relw | Orders reference chromsomes based on relative alignment length |
+|--ribbons | Produce ribbon-style synteny links |
+|--prefix | Defines naming prefix |
+|--debug | Produces verbose output for troubleshooting |
+|--coord-file | Specifies filtered input file |
+|--flipquery | Reverses orientation of query genome relative to reference |
+|--no_ref_labels | 
+|--no_query_labels |
+|--colour_links_by_query | Colours ribbons based on query chromosome identity |
+|
